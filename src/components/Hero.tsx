@@ -73,29 +73,29 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center justify-center text-center text-white">
-        <div className="max-w-4xl mx-auto px-6">
+      <div className="relative z-10 h-full flex items-center justify-center text-center text-white px-4">
+        <div className="max-w-4xl mx-auto">
           <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent leading-tight">
               {heroSlides[currentSlide].title}
             </h1>
-            <p className="text-xl md:text-2xl mb-6 text-blue-100">
+            <p className="text-lg sm:text-xl md:text-2xl mb-4 sm:mb-6 text-blue-100">
               {heroSlides[currentSlide].subtitle}
             </p>
-            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto text-gray-300">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto text-gray-300 px-4">
               {heroSlides[currentSlide].description}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
               <Button
                 onClick={scrollToContact}
-                className="bg-[#041f99] hover:bg-[#041f99]/90 text-white px-8 py-4 text-lg rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+                className="w-full sm:w-auto bg-[#041f99] hover:bg-[#041f99]/90 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
               >
                 Get Free Quote
                 <ArrowRight className="ml-2" />
               </Button>
               <Button
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-[#041f99] px-8 py-4 text-lg rounded-full backdrop-blur-sm transition-all duration-300"
+                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#041f99] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full backdrop-blur-sm transition-all duration-300"
               >
                 View Projects
               </Button>
@@ -107,24 +107,24 @@ export const Hero = () => {
       {/* Carousel Controls */}
       <button
         onClick={prevSlide}
-        className="absolute left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+        className="absolute left-2 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110"
       >
-        <ArrowLeft size={24} />
+        <ArrowLeft size={20} className="sm:w-6 sm:h-6" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110"
+        className="absolute right-2 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110"
       >
-        <ArrowRight size={24} />
+        <ArrowRight size={20} className="sm:w-6 sm:h-6" />
       </button>
 
       {/* Carousel Indicators */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3">
+      <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-2 sm:space-x-3">
         {heroSlides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
               index === currentSlide
                 ? "bg-white scale-125"
                 : "bg-white/50 hover:bg-white/75"
