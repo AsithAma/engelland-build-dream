@@ -1,5 +1,6 @@
 
 import { useState } from "react";
+import { X, Calendar, MapPin, DollarSign, Clock, User, Phone, Mail } from "lucide-react";
 
 const projects = [
   {
@@ -7,42 +8,180 @@ const projects = [
     title: "Modern Custom Home",
     category: "New Construction",
     image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Beautiful custom home with modern amenities"
+    description: "Beautiful custom home with modern amenities",
+    details: {
+      location: "Hutchinson, KS",
+      size: "3,500 sq ft",
+      bedrooms: 4,
+      bathrooms: 3,
+      duration: "8 months",
+      completed: "March 2024",
+      budget: "$450,000",
+      client: "The Johnson Family",
+      features: [
+        "Open concept living space",
+        "Gourmet kitchen with custom cabinetry",
+        "Master suite with walk-in closet",
+        "Covered outdoor living area",
+        "Energy-efficient windows and insulation",
+        "Smart home technology integration"
+      ],
+      gallery: [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    }
   },
   {
     id: 2,
     title: "Kitchen Remodel",
     category: "Remodeling",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Complete kitchen renovation with premium finishes"
+    description: "Complete kitchen renovation with premium finishes",
+    details: {
+      location: "McPherson, KS",
+      size: "400 sq ft",
+      bedrooms: 0,
+      bathrooms: 0,
+      duration: "6 weeks",
+      completed: "January 2024",
+      budget: "$85,000",
+      client: "Sarah Mitchell",
+      features: [
+        "Custom maple cabinetry",
+        "Quartz countertops",
+        "Stainless steel appliances",
+        "Subway tile backsplash",
+        "Pendant lighting over island",
+        "Hardwood flooring"
+      ],
+      gallery: [
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    }
   },
   {
     id: 3,
     title: "Bathroom Addition",
     category: "Addition",
     image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Luxury bathroom addition with accessible features"
+    description: "Luxury bathroom addition with accessible features",
+    details: {
+      location: "Newton, KS",
+      size: "120 sq ft",
+      bedrooms: 0,
+      bathrooms: 1,
+      duration: "4 weeks",
+      completed: "November 2023",
+      budget: "$35,000",
+      client: "Robert & Mary Davis",
+      features: [
+        "Walk-in shower with grab bars",
+        "Comfort height toilet",
+        "Vanity with storage",
+        "Tile flooring with heated elements",
+        "Exhaust fan with timer",
+        "Accessible doorway"
+      ],
+      gallery: [
+        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    }
   },
   {
     id: 4,
     title: "Exterior Siding",
     category: "Exterior",
     image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Weather-resistant siding installation"
+    description: "Weather-resistant siding installation",
+    details: {
+      location: "Salina, KS",
+      size: "2,800 sq ft",
+      bedrooms: 0,
+      bathrooms: 0,
+      duration: "3 weeks",
+      completed: "October 2023",
+      budget: "$28,000",
+      client: "Thomas Anderson",
+      features: [
+        "Vinyl siding installation",
+        "Insulation upgrade",
+        "Trim work and fascia",
+        "Gutters and downspouts",
+        "Storm damage repair",
+        "Color coordination consultation"
+      ],
+      gallery: [
+        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1597047084897-51e81819e8d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    }
   },
   {
     id: 5,
     title: "Custom Cabinetry",
     category: "Interior",
     image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Handcrafted custom cabinets and storage solutions"
+    description: "Handcrafted custom cabinets and storage solutions",
+    details: {
+      location: "Great Bend, KS",
+      size: "Various rooms",
+      bedrooms: 0,
+      bathrooms: 0,
+      duration: "5 weeks",
+      completed: "February 2024",
+      budget: "$45,000",
+      client: "Jennifer Wilson",
+      features: [
+        "Custom kitchen cabinets",
+        "Built-in entertainment center",
+        "Closet organization systems",
+        "Bathroom vanities",
+        "Crown molding and trim",
+        "Hardware selection and installation"
+      ],
+      gallery: [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    }
   },
   {
     id: 6,
     title: "Home Addition",
     category: "Addition",
     image: "https://images.unsplash.com/photo-1597047084897-51e81819e8d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    description: "Seamless home addition with wheelchair accessibility"
+    description: "Seamless home addition with wheelchair accessibility",
+    details: {
+      location: "Hutchinson, KS",
+      size: "800 sq ft",
+      bedrooms: 1,
+      bathrooms: 1,
+      duration: "10 weeks",
+      completed: "December 2023",
+      budget: "$120,000",
+      client: "Jane Langvardt",
+      features: [
+        "Wheelchair accessible entrance",
+        "Bedroom with accessible features",
+        "Full bathroom with safety features",
+        "Laundry room with front-load units",
+        "Walk-in closet",
+        "Ramp with handrails"
+      ],
+      gallery: [
+        "https://images.unsplash.com/photo-1597047084897-51e81819e8d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      ]
+    }
   }
 ];
 
@@ -51,10 +190,13 @@ const categories = ["All", "New Construction", "Remodeling", "Addition", "Exteri
 export const Projects = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   const filteredProjects = selectedCategory === "All" 
     ? projects 
     : projects.filter(project => project.category === selectedCategory);
+
+  const currentProject = projects.find(p => p.id === selectedProject);
 
   return (
     <section id="projects" className="py-20 bg-gray-50">
@@ -121,26 +263,164 @@ export const Projects = () => {
             ))}
           </div>
 
-          {/* Modal for project details would go here */}
-          {selectedProject && (
+          {/* Enhanced Project Details Modal */}
+          {selectedProject && currentProject && (
             <div 
-              className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4"
               onClick={() => setSelectedProject(null)}
             >
-              <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-auto">
-                <div className="p-6">
-                  <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900">Project Details</h3>
+              <div 
+                className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-auto shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {/* Header */}
+                <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl z-10">
+                  <div className="flex justify-between items-start">
+                    <div>
+                      <h3 className="text-3xl font-bold text-gray-900 mb-2">
+                        {currentProject.title}
+                      </h3>
+                      <div className="flex items-center gap-4 text-sm text-gray-600">
+                        <span className="bg-[#041f99]/10 text-[#041f99] px-3 py-1 rounded-full font-medium">
+                          {currentProject.category}
+                        </span>
+                        <div className="flex items-center gap-1">
+                          <MapPin className="w-4 h-4" />
+                          {currentProject.details.location}
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-4 h-4" />
+                          {currentProject.details.completed}
+                        </div>
+                      </div>
+                    </div>
                     <button 
                       onClick={() => setSelectedProject(null)}
-                      className="text-gray-500 hover:text-gray-700"
+                      className="text-gray-400 hover:text-gray-600 p-2 hover:bg-gray-100 rounded-full transition-colors"
                     >
-                      ×
+                      <X className="w-6 h-6" />
                     </button>
                   </div>
-                  <p className="text-gray-600">
-                    Detailed project information would be displayed here with additional images and specifications.
-                  </p>
+                </div>
+
+                {/* Content */}
+                <div className="p-6">
+                  {/* Image Gallery */}
+                  <div className="mb-8">
+                    <div className="aspect-video rounded-xl overflow-hidden mb-4 shadow-lg">
+                      <img
+                        src={currentProject.details.gallery[selectedImageIndex]}
+                        alt={`${currentProject.title} - Image ${selectedImageIndex + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex gap-3 justify-center">
+                      {currentProject.details.gallery.map((image, index) => (
+                        <button
+                          key={index}
+                          onClick={() => setSelectedImageIndex(index)}
+                          className={`w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
+                            selectedImageIndex === index 
+                              ? 'border-[#041f99] shadow-md' 
+                              : 'border-gray-200 hover:border-gray-300'
+                          }`}
+                        >
+                          <img
+                            src={image}
+                            alt={`Thumbnail ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Project Stats */}
+                  <div className="grid md:grid-cols-4 gap-6 mb-8">
+                    <div className="bg-gray-50 rounded-xl p-4 text-center">
+                      <DollarSign className="w-8 h-8 text-[#041f99] mx-auto mb-2" />
+                      <div className="text-2xl font-bold text-gray-900">{currentProject.details.budget}</div>
+                      <div className="text-sm text-gray-600">Total Budget</div>
+                    </div>
+                    <div className="bg-gray-50 rounded-xl p-4 text-center">
+                      <Clock className="w-8 h-8 text-[#041f99] mx-auto mb-2" />
+                      <div className="text-2xl font-bold text-gray-900">{currentProject.details.duration}</div>
+                      <div className="text-sm text-gray-600">Duration</div>
+                    </div>
+                    <div className="bg-gray-50 rounded-xl p-4 text-center">
+                      <MapPin className="w-8 h-8 text-[#041f99] mx-auto mb-2" />
+                      <div className="text-2xl font-bold text-gray-900">{currentProject.details.size}</div>
+                      <div className="text-sm text-gray-600">Size</div>
+                    </div>
+                    <div className="bg-gray-50 rounded-xl p-4 text-center">
+                      <User className="w-8 h-8 text-[#041f99] mx-auto mb-2" />
+                      <div className="text-lg font-bold text-gray-900">{currentProject.details.client}</div>
+                      <div className="text-sm text-gray-600">Client</div>
+                    </div>
+                  </div>
+
+                  {/* Project Details Grid */}
+                  <div className="grid md:grid-cols-2 gap-8 mb-8">
+                    {/* Project Description */}
+                    <div>
+                      <h4 className="text-xl font-semibold text-gray-900 mb-4">Project Overview</h4>
+                      <p className="text-gray-600 leading-relaxed mb-6">
+                        {currentProject.description}. This project showcases our commitment to quality craftsmanship and attention to detail, delivering exceptional results that exceed our clients' expectations.
+                      </p>
+                      
+                      {/* Room Details */}
+                      {(currentProject.details.bedrooms > 0 || currentProject.details.bathrooms > 0) && (
+                        <div className="bg-[#041f99]/5 rounded-xl p-4">
+                          <h5 className="font-semibold text-gray-900 mb-2">Room Configuration</h5>
+                          <div className="flex gap-4 text-sm text-gray-600">
+                            {currentProject.details.bedrooms > 0 && (
+                              <span>{currentProject.details.bedrooms} Bedrooms</span>
+                            )}
+                            {currentProject.details.bathrooms > 0 && (
+                              <span>{currentProject.details.bathrooms} Bathrooms</span>
+                            )}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Features List */}
+                    <div>
+                      <h4 className="text-xl font-semibold text-gray-900 mb-4">Key Features</h4>
+                      <ul className="space-y-3">
+                        {currentProject.details.features.map((feature, index) => (
+                          <li key={index} className="flex items-start gap-3">
+                            <div className="w-2 h-2 bg-[#041f99] rounded-full mt-2 flex-shrink-0"></div>
+                            <span className="text-gray-600">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* Contact CTA */}
+                  <div className="bg-gradient-to-r from-[#041f99] to-blue-600 rounded-xl p-6 text-white text-center">
+                    <h4 className="text-xl font-semibold mb-2">Interested in a Similar Project?</h4>
+                    <p className="text-blue-100 mb-4">
+                      Contact Engelland Construction today for a free consultation and quote.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4">
+                      <a 
+                        href="tel:+1234567890" 
+                        className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors"
+                      >
+                        <Phone className="w-4 h-4" />
+                        Call Us
+                      </a>
+                      <a 
+                        href="mailto:office.engellandconstruction@gmail.com" 
+                        className="flex items-center gap-2 bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors"
+                      >
+                        <Mail className="w-4 h-4" />
+                        Email Us
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
