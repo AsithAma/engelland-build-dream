@@ -39,7 +39,7 @@ export const Contact = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-12 mb-12">
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h3>
@@ -136,77 +136,74 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Info & Map */}
-            <div className="space-y-8">
-              {/* Contact Information */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+            {/* Contact Information */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get In Touch</h3>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
+                    <MapPin className="w-6 h-6 text-[#041f99]" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
+                    <p className="text-gray-600">
+                      615 N. Main St.<br />
+                      Hutchinson, KS, United States
+                    </p>
+                  </div>
+                </div>
                 
-                <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
-                      <MapPin className="w-6 h-6 text-[#041f99]" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Address</h4>
-                      <p className="text-gray-600">
-                        615 N. Main St.<br />
-                        Hutchinson, KS, United States
-                      </p>
-                    </div>
+                <div className="flex items-start">
+                  <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
+                    <Phone className="w-6 h-6 text-[#041f99]" />
                   </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
-                      <Phone className="w-6 h-6 text-[#041f99]" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
-                      <p className="text-gray-600">(620) 555-0123</p>
-                    </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Phone</h4>
+                    <p className="text-gray-600">(620) 555-0123</p>
                   </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
-                      <Mail className="w-6 h-6 text-[#041f99]" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
-                      <p className="text-gray-600">office.engellandconstruction@gmail.com</p>
-                    </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
+                    <Mail className="w-6 h-6 text-[#041f99]" />
                   </div>
-                  
-                  <div className="flex items-start">
-                    <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
-                      <Clock className="w-6 h-6 text-[#041f99]" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">Business Hours</h4>
-                      <p className="text-gray-600">
-                        Monday - Friday: 8:00 AM - 5:00 PM<br />
-                        Saturday: 9:00 AM - 2:00 PM<br />
-                        Sunday: Closed
-                      </p>
-                    </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Email</h4>
+                    <p className="text-gray-600">office.engellandconstruction@gmail.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="bg-[#041f99]/10 rounded-lg p-3 mr-4">
+                    <Clock className="w-6 h-6 text-[#041f99]" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-1">Business Hours</h4>
+                    <p className="text-gray-600">
+                      Monday - Friday: 8:00 AM - 5:00 PM<br />
+                      Saturday: 9:00 AM - 2:00 PM<br />
+                      Sunday: Closed
+                    </p>
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
 
-              {/* Google Maps */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
-                <div className="h-80">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3135.7267985966554!2d-97.92944268464934!3d38.061023379701234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87a689d12ca2c775%3A0xd4b1ed67b7a8e2a8!2s615%20N%20Main%20St%2C%20Hutchinson%2C%20KS%2067501!5e0!3m2!1sen!2sus!4v1635789456789!5m2!1sen!2sus"
-                    width="100%"
-                    height="100%"
-                    style={{ border: 0 }}
-                    allowFullScreen
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-xl"
-                  ></iframe>
-                </div>
-              </div>
+          {/* Google Maps - Full Width */}
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div className="h-96 w-full">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3135.7267985966554!2d-97.92944268464934!3d38.061023379701234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87a689d12ca2c775%3A0xd4b1ed67b7a8e2a8!2s615%20N%20Main%20St%2C%20Hutchinson%2C%20KS%2067501!5e0!3m2!1sen!2sus!4v1635789456789!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </div>
