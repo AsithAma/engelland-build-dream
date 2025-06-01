@@ -1,3 +1,4 @@
+import logoImage from "@/assets/Logo.jpg";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,8 @@ export const Footer = () => {
           <div className="grid md:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-bold text-[#041f99] mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
+                <img src={logoImage} alt="Engelland Construction" className="h-12 rounded-[8px] mb-4" />
                 Engelland Construction
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4">

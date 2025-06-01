@@ -34,7 +34,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-[#041f99] hover:scale-105 transition-transform duration-300 cursor-pointer">
-            <img src={logoImage} alt="Engelland Construction" className="h-12" />
+            <img src={logoImage} alt="Engelland Construction" className="h-12 rounded-[8px]" />
           </div>
 
           {/* Desktop Navigation */}
