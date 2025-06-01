@@ -1,13 +1,34 @@
-
 import { useState } from "react";
 import { X, Calendar, MapPin, DollarSign, Clock, User, Phone, Mail } from "lucide-react";
+
+// Import images
+import modernHome from "../assets/House 1.jpg";
+import kitchenRemodel from "../assets/Kitchen 1.jpg";
+import bathroomAddition from "../assets/ADA-bath-scaled.jpg";
+import exteriorSiding from "../assets/Windows-HQ-scaled.jpg";
+import customCabinetry from "../assets/Kitchen 2.jpg";
+import homeAddition from "../assets/Langvardt-Ramp-scaled.jpg";
+
+// Additional gallery images
+import kitchen2 from "../assets/Kitchen 2.jpg";
+import kitchen3 from "../assets/Kitchen 3.png";
+import bathroom2 from "../assets/ADA-shower-scaled.jpg";
+import bathroom3 from "../assets/ADA-sink-pot-scaled.jpg";
+import homeExt from "../assets/Ext.-to-addon-scaled.jpg";
+import bedroom from "../assets/Bedrm-scaled.jpg";
+import ramp from "../assets/Ramp-scaled.jpg";
+import laundry from "../assets/Laundry-clst-scaled.jpg";
+import backyard from "../assets/Backyard 1.jpg";
+import house2 from "../assets/House 2.jpg";
+import beforeAfter1 from "../assets/Before-After-1.png";
+import beforeAfter2 from "../assets/Before-After-2-1.png";
 
 const projects = [
   {
     id: 1,
     title: "Modern Custom Home",
     category: "New Construction",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: modernHome,
     description: "Beautiful custom home with modern amenities",
     details: {
       location: "Hutchinson, KS",
@@ -27,9 +48,9 @@ const projects = [
         "Smart home technology integration"
       ],
       gallery: [
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        modernHome,
+        house2,
+        backyard
       ]
     }
   },
@@ -37,7 +58,7 @@ const projects = [
     id: 2,
     title: "Kitchen Remodel",
     category: "Remodeling",
-    image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: kitchenRemodel,
     description: "Complete kitchen renovation with premium finishes",
     details: {
       location: "McPherson, KS",
@@ -57,9 +78,9 @@ const projects = [
         "Hardwood flooring"
       ],
       gallery: [
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        kitchenRemodel,
+        kitchen2,
+        kitchen3
       ]
     }
   },
@@ -67,7 +88,7 @@ const projects = [
     id: 3,
     title: "Bathroom Addition",
     category: "Addition",
-    image: "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: bathroomAddition,
     description: "Luxury bathroom addition with accessible features",
     details: {
       location: "Newton, KS",
@@ -87,9 +108,9 @@ const projects = [
         "Accessible doorway"
       ],
       gallery: [
-        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        bathroomAddition,
+        bathroom2,
+        bathroom3
       ]
     }
   },
@@ -97,7 +118,7 @@ const projects = [
     id: 4,
     title: "Exterior Siding",
     category: "Exterior",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: exteriorSiding,
     description: "Weather-resistant siding installation",
     details: {
       location: "Salina, KS",
@@ -117,9 +138,9 @@ const projects = [
         "Color coordination consultation"
       ],
       gallery: [
-        "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1597047084897-51e81819e8d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        exteriorSiding,
+        homeExt,
+        backyard
       ]
     }
   },
@@ -127,7 +148,7 @@ const projects = [
     id: 5,
     title: "Custom Cabinetry",
     category: "Interior",
-    image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: customCabinetry,
     description: "Handcrafted custom cabinets and storage solutions",
     details: {
       location: "Great Bend, KS",
@@ -147,9 +168,9 @@ const projects = [
         "Hardware selection and installation"
       ],
       gallery: [
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        customCabinetry,
+        kitchen3,
+        beforeAfter1
       ]
     }
   },
@@ -157,7 +178,7 @@ const projects = [
     id: 6,
     title: "Home Addition",
     category: "Addition",
-    image: "https://images.unsplash.com/photo-1597047084897-51e81819e8d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: homeAddition,
     description: "Seamless home addition with wheelchair accessibility",
     details: {
       location: "Hutchinson, KS",
@@ -177,9 +198,9 @@ const projects = [
         "Ramp with handrails"
       ],
       gallery: [
-        "https://images.unsplash.com/photo-1597047084897-51e81819e8d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+        homeAddition,
+        ramp,
+        bedroom
       ]
     }
   }

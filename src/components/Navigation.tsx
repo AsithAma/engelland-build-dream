@@ -1,7 +1,7 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logoImage from "@/assets/Logo.jpg";
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,7 +34,7 @@ export const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-[#041f99] hover:scale-105 transition-transform duration-300 cursor-pointer">
-            Engelland Construction
+            <img src={logoImage} alt="Engelland Construction" className="h-12" />
           </div>
 
           {/* Desktop Navigation */}
@@ -49,7 +49,9 @@ export const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.id)}
-                className="relative text-gray-700 font-medium hover:text-[#041f99] transition-all duration-300 group"
+                className={`relative font-medium transition-all duration-300 group ${
+                  isScrolled ? "text-gray-600" : "text-white"
+                } hover:text-[#041f99]`}
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#041f99] transition-all duration-300 group-hover:w-full"></span>

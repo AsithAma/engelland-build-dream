@@ -1,23 +1,27 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowLeft } from "lucide-react";
 
+// Import images from assets
+import houseImage from "../assets/House 1.jpg";
+import kitchenImage from "../assets/Kitchen 1.jpg";
+import windowsImage from "../assets/Windows-HQ-scaled.jpg";
+
 const heroSlides = [
   {
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    image: houseImage,
     title: "Engelland Construction",
     subtitle: "Your construction solution since 2006",
     description: "Building dreams with exceptional craftsmanship and quality",
   },
   {
-    image: "https://images.unsplash.com/photo-1597047084897-51e81819e8d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    image: kitchenImage,
     title: "Custom Homes",
     subtitle: "From ground up to move-in ready",
     description: "Creating beautiful, functional spaces for modern living",
   },
   {
-    image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80",
+    image: windowsImage,
     title: "Quality Remodeling",
     subtitle: "Transform your existing space",
     description: "Expert renovations that exceed expectations",
@@ -44,6 +48,13 @@ export const Hero = () => {
 
   const scrollToContact = () => {
     const element = document.getElementById("contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToProjects = () => {
+    const element = document.getElementById("projects");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
@@ -94,8 +105,9 @@ export const Hero = () => {
                 <ArrowRight className="ml-2" />
               </Button>
               <Button
+                onClick={scrollToProjects}
                 variant="outline"
-                className="w-full sm:w-auto border-white text-white hover:bg-white hover:text-[#041f99] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full backdrop-blur-sm transition-all duration-300"
+                className="w-full sm:w-auto border-white text-gray-600 hover:bg-white hover:text-[#041f99] hover:border-[#041f99] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full backdrop-blur-sm transition-all duration-300"
               >
                 View Projects
               </Button>
